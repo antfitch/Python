@@ -110,7 +110,10 @@ def binary_search_by_recursion(sorted_collection, item, left, right):
     >>> binary_search_std_lib([0, 5, 7, 10, 15], 6)
 
     """
-    midpoint = left + (right - left) // 2
+    if (right < left):
+        return None    
+    
+    midpoint = (left + right) // 2
 
     if sorted_collection[midpoint] == item:
         return midpoint
